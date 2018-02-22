@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" type="stylesheet"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-xl bg-light navbar-light">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="logo" style="width:150px; margin-left:15px;">
+        </a>
+
+            <div class="col-6 my-2 ml-15" id="search">
+                <label class="sr-only" for="inlineFormInputGroup">SearchJob</label>
+                <div class="input-group" id="navbar_form">
+                    <input type="text" class="form-control col-8" id="inlineFormInput" placeholder="Position or Company">
+                    <select class="custom-select col-4" id="inlineFormCustomSelect">
+                        <option selected>Location</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <div class="input-group-append"></div>
+                        <button class="btn" id="search_button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div> 
+        
+        <button class="btn" type="button" id="pop_up_search"><i class="fa fa-search"></i></button>
+        <button class="btn" data-badge="1" id="notif_button"><i class="fa fa-bell-o"></i></button>
+        <button class="btn" id="menu_button" onclick="openNav()"><i class="fa fa-bars"></i></button>
+    </nav>
+
+    <div class="row">
+        <div class="col-8" id="profile_details">
+            <div class="jumbotron">
+                <img src="img/profile.png" class="rounded-circle" alt="profile photo" style="width:80px;">
+                <br>
+                <br>
+                <h4 class="jumbotron_content">Jhon Doe</h4>
+                <h5 class="jumbotron_content">A Web Programmer</h5>
+                <h6 class="jumbotron_content">Web Developer at Companee</h6> 
+            </div>
+
+            <div id="profile_info">
+                <div class="row">
+                    <h5 class="col-2">PROFILE</h5>
+                    <button class="btn" id="edit_button"><i class="fa fa-edit"></i></button>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <p class="font-weight-light">Urbanhire ID</p>
+                        <p class="font-weight-light">Username</p>
+                        <p class="font-weight-light">Name</p>
+                        <p class="font-weight-light">Email</p>
+                        <p class="font-weight-light">Gender</p>
+                        <p class="font-weight-light">Birthday</p>
+                        <p class="font-weight-light">Headline</p>
+                        <p class="font-weight-light">Phone</p>                                
+                        <p class="font-weight-light">Address</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="font-weight-bold">G7NV8BOLQ6</p>
+                        <p class="font-weight-bold">jhondoe</p>
+                        <p class="font-weight-bold">Jhon Doe</p>
+                        <p class="font-weight-bold">jhon_doe@gmail.com</p>
+                        <p class="font-weight-bold">Male</p>                                
+                        <p class="font-weight-bold">12 January 1992</p>                        
+                        <p class="font-weight-bold">Web Developer</p>
+                        <p class="font-weight-bold">+222 111 333</p>
+                        <p class="font-weight-bold">Jakarta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3" id="popup_image">
+            <div class="row">
+                <img class="image_content" src="img/blank_image.jpg" alt="blank image">
+            </div>
+            <br>
+            <div class="row">
+                <img class="image_content" src="img/blank_image.jpg" alt="blank image">
+            </div>
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <div class="row">
+            <button class="btn" id="close_nav_button" onclick="closeNav()">
+                <img src="img/close_nav_button.png" style="width:25px;">
+            </button>
+        </div>
+        <div class="list-group">
+            <a class="list-group-item-action font-weight-light nav_menu">BROWSE JOB</a>
+            <a class="list-group-item-action font-weight-light nav_menu">CAREER ADVICE</a>
+            <a class="list-group-item-action font-weight-light nav_menu">EMPLOYERS</a>
+        </div>
+        <hr>
+        <div class="list-group">
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/profile_icon.png">PROFILE</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/skills_icon.png">SKILLS</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/resume_icon.png">RESUME</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/certificate_icon.png">CERTIFICATE</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/saved_jobs_icon.png">SAVED JOBS</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/dismiss_jobs_icon.png">DISMISS JOBS</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/applied_jobs_icon.png">APPLIED JOBS</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/job_alert_icon.png">JOB ALERT</a>
+            <a class="list-group-item-action font-weight-light nav_menu"><img class="icon_menu" src="img/settings_icon.png">SETTINGS</a>
+        </div>
+        <hr>
+        <div class="list-group">
+            <a class="list-group-item-action font-weight-light nav_menu" id="sign_out"><img class="icon_menu" src="img/sign_out_icon.png">SIGN OUT</a> 
+        </div>
+    </div>
+</body>
+</html>
